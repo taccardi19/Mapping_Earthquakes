@@ -4,8 +4,6 @@ attribution: 'Map data © <a href="https://www.openstreetmap.org/">OpenStreetMap
     maxZoom: 18,
     accessToken: API_KEY
 });
-// Then we add our 'graymap' tile layer to the map.
-//streets.addTo(map);
 
 // We create the dark view tile layer that will be an option for our map.
 let satelliteStreets = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/satellite-streets-v11/tiles/{z}/{x}/{y}?access_token={accessToken}', {
@@ -15,7 +13,7 @@ attribution: 'Map data © <a href="https://www.openstreetmap.org/">OpenStreetMap
 });
 
 let baseMaps = {
-  Streets: streets,
+  "Streets": streets,
   "Satellite Streets": satelliteStreets
 };
 
@@ -30,7 +28,7 @@ let map = L.map('mapid', {
 L.control.layers(baseMaps).addTo(map);
 
 // Accessing the Toronto neighborhoods GeoJSON URL.
-let torontoHoods = "https://raw.githubusercontent.com/taccardi19/Mapping_Earthquakes/Mapping_GeoJSON_Polygons/Mapping_GeoJSON_Polygons/torontoNeighborhoods.json";
+let torontoHoods = "https://raw.githubusercontent.com/taccardi19/Mapping_Earthquakes/main/torontoNeighborhoods.json";
 
 // Create a style for the lines.
 let myStyle = {
